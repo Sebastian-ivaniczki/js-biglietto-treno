@@ -43,27 +43,30 @@ if (isNaN(tripKm) && isNaN(pasengerAge) ) {
     
 }
 
-let ageDiscount = tripCost;
+let ageDiscount
+let  discontedPrice = tripCost;
 
 if (isValid){
     
     //se è minorenne aplico uno sconto del 20%
     if (pasengerAge <= 18){
-        ageDiscount = (tripCost / 100) * 20; 
-        ageDiscount = ageDiscount.toFixed(2)
+        ageDiscount = (tripCost * 20) / 100; 
+        discontedPrice = tripCost - ageDiscount;
+        discontedPrice = discontedPrice.toFixed(2)
     }
     
     //se ha piu di 65 anni aplico uno sconto del 40%
     if (pasengerAge >= 65){
-        ageDiscount = (tripCost / 100) * 40; 
-        ageDiscount = ageDiscount.toFixed(2)
+        ageDiscount = (tripCost * 40) / 100; 
+        discontedPrice = tripCost - ageDiscount;
+        discontedPrice = discontedPrice.toFixed(2)
     }
     
 }
 
-console.log(ageDiscount);
+console.log( discontedPrice);
 
-finalPrice.innerText = `in base alla tua età di ${pasengerAge} ed hai chilometri da percorrere "${tripKm}" il prezzo del biglietto e di ${ageDiscount}€`
+finalPrice.innerText = `in base alla tua età di ${pasengerAge} ed hai chilometri da percorrere "${tripKm}" il prezzo del biglietto e di ${discontedPrice}€`
     
     
     
