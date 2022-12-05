@@ -39,7 +39,8 @@ let underageDiscount
 if (pasengerAge <= 18){
     underageDiscount = (tripCost / 100) * 20; 
 
-    //return underageDiscount.toFixed(2);
+} else {
+    underageDiscount = tripCost
 }
 
 console.log(underageDiscount)
