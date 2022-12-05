@@ -18,13 +18,13 @@ const finalPrice = document.getElementById("target");
 
 //2- chido all'utente il numero di chilometri che deve percorrere 
 
-const tripKm = parseInt(prompt(" quanti chilometri dura il tuo viaggi?" , "15"));
+const tripKm = parseInt(prompt(" quanti chilometri dura il tuo viaggi?" , "15").trim());
 //console.log(tripKm)
 
 
 //3- chiedo l'eta del passegero
 
-const pasengerAge = parseInt(prompt("quanti anni hai?" , "25"))
+const pasengerAge = parseInt(prompt("quanti anni hai?" , "25").trim())
 
 //4- calcolo il prezzo del viaggio sapendo che costa (0.21€) al chilometro
 const pricePerKm = 0.21;
@@ -34,26 +34,21 @@ const tripCost =  tripKm * pricePerKm;
 
 //se è minorenne aplico uno sconto del 20%
 
-let underAgeDiscount
+let ageDiscount = tripCost;
 
 if (pasengerAge <= 18){
-    underAgeDiscount = (tripCost / 100) * 20; 
+    ageDiscount = (tripCost / 100) * 20; 
 
-} else {
-    underAgeDiscount = tripCost;
 }
 
-console.log(underAgeDiscount);
+
 
 //se ha piu di 65 anni aplico uno sconto del 40%
 
-let overAgeDiscount
+
 
 if (pasengerAge >= 65){
-    overAgeDiscount = (tripCost / 100) * 40; 
+    ageDiscount = (tripCost / 100) * 40; 
 
-} else {
-    overAgeDiscount = tripCost;
 }
-
-console.log(overAgeDiscount);
+console.log(ageDiscount);
