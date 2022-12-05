@@ -34,13 +34,26 @@ const tripCost =  tripKm * pricePerKm;
 
 //se è minorenne aplico uno sconto del 20%
 
-let underageDiscount
+let underAgeDiscount
 
 if (pasengerAge <= 18){
-    underageDiscount = (tripCost / 100) * 20; 
+    underAgeDiscount = (tripCost / 100) * 20; 
 
 } else {
-    underageDiscount = tripCost
+    underAgeDiscount = tripCost;
 }
 
-console.log(underageDiscount)
+console.log(underAgeDiscount);
+
+//se ha piu di 65 anni aplico uno sconto del 40%
+
+let overAgeDiscount
+
+if (pasengerAge >= 65){
+    overAgeDiscount = (tripCost / 100) * 40; 
+
+} else {
+    overAgeDiscount = tripCost;
+}
+
+console.log(overAgeDiscount);
