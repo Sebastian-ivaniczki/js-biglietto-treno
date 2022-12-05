@@ -37,17 +37,19 @@ tripCost = tripCost.toFixed(2)
 
 let isValid = true
 
-if (isNaN(tripKm) && isNaN(pasengerAge) ) {
+if (isNaN(tripKm) || isNaN(pasengerAge) ) {
     isValid = false
-   
-    
 }
+    
+
 
 let ageDiscount
 let  discontedPrice = tripCost;
 
-if (isValid){
+if (isValid === true){
     
+    let tripCost =  tripKm * pricePerKm;
+    tripCost = tripCost.toFixed(2)
     //se è minorenne aplico uno sconto del 20%
     if (pasengerAge <= 18){
         ageDiscount = (tripCost * 20) / 100; 
@@ -62,11 +64,11 @@ if (isValid){
         discontedPrice = discontedPrice.toFixed(2)
     }
     
+    finalPrice.innerText = `in base alla tua età di ${pasengerAge} ed hai chilometri da percorrere "${tripKm}" il prezzo del biglietto e di ${discontedPrice}€`
 }
 
-console.log( discontedPrice);
+//console.log( discontedPrice);
 
-finalPrice.innerText = `in base alla tua età di ${pasengerAge} ed hai chilometri da percorrere "${tripKm}" il prezzo del biglietto e di ${discontedPrice}€`
     
     
     
