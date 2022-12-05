@@ -65,6 +65,8 @@ if (isValid === true){
     }
     
     finalPrice.innerText = `in base alla tua età di ${pasengerAge} ed hai chilometri da percorrere "${tripKm}" il prezzo del biglietto e di ${discontedPrice}€`
+}else {
+    finalPrice.innerText = "l'eta ed i chilometri devono essere numeri (ricarica la pagina)"
 }
 
 //console.log( discontedPrice);
